@@ -1,0 +1,13 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:background="@drawable/bg_card_rounded"
+    android:padding="12dp" android:layout_marginBottom="8dp">
+
+    <TextView android:id="@+id/tvBadgeName" android:textColor="@color/ring_xp"
+        android:textSize="16sp" android:textStyle="bold"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
+    <TextView android:id="@+id/tvBadgeCriteria" android:textColor="@color/text_secondary"
+        android:textSize="12sp" android:layout_marginTop="2dp"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,59 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@color/bg_black">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp" android:paddingBottom="80dp">
+
+            <FrameLayout android:layout_width="220dp" android:layout_height="220dp"
+                android:layout_gravity="center" android:layout_marginTop="24dp">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/ringStreak" android:layout_width="220dp" android:layout_height="220dp"
+                    app:trackColor="@color/ring_track" app:indicatorColor="@color/ring_streak"
+                    app:trackThickness="14dp" app:indicatorSize="220dp" app:trackCornerRadius="8dp" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/ringXp" android:layout_width="176dp" android:layout_height="176dp"
+                    android:layout_gravity="center" app:trackColor="@color/ring_track"
+                    app:indicatorColor="@color/ring_xp" app:trackThickness="14dp"
+                    app:indicatorSize="176dp" app:trackCornerRadius="8dp" />
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/ringChallenge" android:layout_width="132dp" android:layout_height="132dp"
+                    android:layout_gravity="center" app:trackColor="@color/ring_track"
+                    app:indicatorColor="@color/ring_challenge" app:trackThickness="14dp"
+                    app:indicatorSize="132dp" app:trackCornerRadius="8dp" />
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_gravity="center" android:orientation="vertical" android:gravity="center">
+                    <TextView android:id="@+id/tvStreakNumber" style="@style/Headline.Big" android:text="0" />
+                    <TextView style="@style/Label.Caps" android:text="Day Streak" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <LinearLayout android:id="@+id/cardTodayWorkout" style="@style/Card.Rounded"
+                android:layout_marginTop="24dp" android:clickable="true" android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView style="@style/Label.Caps" android:text="Today's Workout — Tap to Start" />
+                <TextView android:id="@+id/tvTodayWorkout" android:textColor="@color/text_primary"
+                    android:textSize="20sp" android:textStyle="bold" android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading..." />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/ring_streak"
+        app:itemTextColor="@color/text_primary"
+        android:background="@color/card_dark" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

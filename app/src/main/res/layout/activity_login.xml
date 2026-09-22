@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg_black" android:orientation="vertical"
+    android:gravity="center" android:padding="24dp">
+
+    <TextView android:text="FitStreak" style="@style/Headline.Big"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textColor="@color/ring_streak" android:layout_marginBottom="32dp" />
+
+    <LinearLayout style="@style/Card.Rounded" android:orientation="vertical"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+
+        <EditText android:id="@+id/etEmail" style="@style/Input.Dark"
+            android:hint="Email" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <EditText android:id="@+id/etPassword" style="@style/Input.Dark"
+            android:hint="Password" android:inputType="textPassword"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
+
+        <Button android:id="@+id/btnLogin" style="@style/Btn.Primary" android:text="Log In"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <TextView android:id="@+id/tvRegister" android:text="No account? Register"
+            android:textColor="@color/text_secondary" android:layout_gravity="center"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:minHeight="48dp" android:gravity="center"
+            android:layout_marginTop="16dp" android:padding="8dp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <color name="bg_black">#0A0A0A</color>
+    <color name="card_dark">#1C1C1E</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#8E8E93</color>
+    <color name="ring_streak">#FF6B00</color>
+    <color name="ring_xp">#32D74B</color>
+    <color name="ring_challenge">#0AC8F5</color>
+    <color name="ring_track">#2C2C2E</color>
+</resources>

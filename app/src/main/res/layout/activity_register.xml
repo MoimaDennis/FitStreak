@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/bg_black" android:orientation="vertical"
+    android:gravity="center" android:padding="24dp">
+
+    <TextView android:text="Create Account" style="@style/Headline.Big"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:textColor="@color/ring_streak" android:layout_marginBottom="32dp" />
+
+    <LinearLayout style="@style/Card.Rounded" android:orientation="vertical"
+        android:layout_width="match_parent" android:layout_height="wrap_content">
+
+        <EditText android:id="@+id/etUsername" style="@style/Input.Dark"
+            android:hint="Username" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+        <EditText android:id="@+id/etEmail" style="@style/Input.Dark"
+            android:hint="Email" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
+
+        <EditText android:id="@+id/etPassword" style="@style/Input.Dark"
+            android:hint="Password" android:inputType="textPassword"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
+
+        <Button android:id="@+id/btnRegister" style="@style/Btn.Primary" android:text="Register"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</LinearLayout>

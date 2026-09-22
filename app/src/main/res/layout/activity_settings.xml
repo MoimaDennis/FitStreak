@@ -1,0 +1,48 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@color/bg_black" android:orientation="vertical" android:padding="16dp">
+
+        <TextView style="@style/Headline.Big" android:textSize="24sp" android:text="Settings"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout style="@style/Card.Rounded" android:orientation="vertical"
+            android:layout_width="match_parent" android:layout_height="wrap_content">
+
+            <TextView style="@style/Label.Caps" android:text="Units" />
+            <RadioGroup android:id="@+id/rgUnits" android:orientation="horizontal"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                <RadioButton android:id="@+id/rbMetric" android:text="Metric" android:textColor="@color/text_primary"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" />
+                <RadioButton android:id="@+id/rbImperial" android:text="Imperial" android:textColor="@color/text_primary"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp" />
+            </RadioGroup>
+
+            <TextView style="@style/Label.Caps" android:text="Notifications" android:layout_marginTop="20dp" />
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchNotifications"
+                android:text="Enable notifications" android:textColor="@color/text_primary"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" android:checked="true" />
+
+            <Button android:id="@+id/btnLogout" style="@style/Btn.Primary" android:text="Log Out"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="24dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/ring_streak"
+        app:itemTextColor="@color/text_primary"
+        android:background="@color/card_dark" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,44 @@
+<resources>
+    <style name="Theme.FitStreak" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/bg_black</item>
+        <item name="colorPrimary">@color/ring_streak</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+    <style name="Headline.Big" parent="">
+        <item name="android:textSize">48sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+
+    <style name="Label.Caps" parent="">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.08</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Card.Rounded" parent="">
+        <item name="android:background">@drawable/bg_card_rounded</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="Btn.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/ring_streak</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="cornerRadius">14dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+    <style name="Input.Dark" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_card_rounded</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_secondary</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+</resources>
