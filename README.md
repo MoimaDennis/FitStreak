@@ -33,12 +33,10 @@ anywhere in the app, and switching tabs never stacks duplicate screens on the ba
 - **Hosting:** InfinityFree (API + database)
 - **CI/CD:** GitHub Actions (automated build and unit tests on every push)
 
-## Screenshots
-<!-- Drag screenshot images directly into this GitHub editor to embed them, or add
-     ![description](images/filename.png) once you've committed an /images folder -->
+
 
 ## Demo Video
-<!-- Paste your unlisted YouTube link here once recorded -->
+https://youtube.com/shorts/N5I33itHtm0?feature=share
 
 ## AI Tool Usage
 See [AI_USAGE.md](AI_USAGE.md) for a full breakdown of how AI tools were used during development.
