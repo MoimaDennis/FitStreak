@@ -6,7 +6,7 @@
     <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
         android:background="@color/bg_black" android:orientation="vertical" android:padding="16dp">
 
-        <TextView style="@style/Headline.Big" android:textSize="24sp" android:text="Workout Library"
+        <TextView style="@style/Headline.Big" android:textSize="24sp" android:text="@string/title_library"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:layout_marginBottom="16dp" />
 
@@ -22,10 +22,15 @@
                 android:layout_marginStart="8dp" />
         </LinearLayout>
 
+        <TextView android:id="@+id/tvStatus" android:visibility="gone"
+            android:textColor="@color/ring_streak" android:textStyle="bold" android:layout_marginTop="12dp"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvWorkouts"
             android:layout_width="match_parent" android:layout_height="0dp"
-            android:layout_weight="1" android:layout_marginTop="16dp" android:paddingBottom="72dp" />
+            android:layout_weight="1" android:layout_marginTop="16dp" android:paddingBottom="72dp"
+            android:clipToPadding="false" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -3,39 +3,72 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-        android:background="@color/bg_black" android:orientation="vertical" android:padding="16dp">
+    <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@color/bg_black">
 
-        <TextView style="@style/Headline.Big" android:textSize="24sp" android:text="Settings"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:padding="16dp" android:paddingBottom="80dp">
 
-        <LinearLayout style="@style/Card.Rounded" android:orientation="vertical"
-            android:layout_width="match_parent" android:layout_height="wrap_content">
-
-            <TextView style="@style/Label.Caps" android:text="Units" />
-            <RadioGroup android:id="@+id/rgUnits" android:orientation="horizontal"
+            <TextView style="@style/Headline.Big" android:textSize="24sp" android:text="@string/title_settings"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
-                <RadioButton android:id="@+id/rbMetric" android:text="Metric" android:textColor="@color/text_primary"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" />
-                <RadioButton android:id="@+id/rbImperial" android:text="Imperial" android:textColor="@color/text_primary"
+                android:layout_marginBottom="16dp" />
+
+            <LinearLayout style="@style/Card.Rounded" android:orientation="vertical"
+                android:layout_width="match_parent" android:layout_height="wrap_content">
+                <TextView style="@style/Label.Caps" android:text="@string/lbl_account" />
+                <TextView android:id="@+id/tvAccount" android:textColor="@color/text_primary"
+                    android:textSize="16sp" android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Card.Rounded" android:orientation="vertical"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+                <TextView style="@style/Label.Caps" android:text="@string/lbl_notifications" />
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchNotifications"
+                    android:text="@string/sw_notifications" android:textColor="@color/text_primary"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:minHeight="48dp" android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/Card.Rounded" android:orientation="vertical"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+                <TextView style="@style/Label.Caps" android:text="@string/lbl_language" />
+                <RadioGroup android:id="@+id/rgLanguage" android:orientation="horizontal"
                     android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp" />
-            </RadioGroup>
+                    android:layout_marginTop="8dp">
+                    <RadioButton android:id="@+id/rbEn" android:text="@string/lang_en" android:textColor="@color/text_primary"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="48dp" />
+                    <RadioButton android:id="@+id/rbAf" android:text="@string/lang_af" android:textColor="@color/text_primary"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="48dp"
+                        android:layout_marginStart="8dp" />
+                    <RadioButton android:id="@+id/rbZu" android:text="@string/lang_zu" android:textColor="@color/text_primary"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="48dp"
+                        android:layout_marginStart="8dp" />
+                </RadioGroup>
+            </LinearLayout>
 
-            <TextView style="@style/Label.Caps" android:text="Notifications" android:layout_marginTop="20dp" />
-            <com.google.android.material.switchmaterial.SwitchMaterial
-                android:id="@+id/switchNotifications"
-                android:text="Enable notifications" android:textColor="@color/text_primary"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:layout_marginTop="8dp" android:checked="true" />
+            <LinearLayout style="@style/Card.Rounded" android:orientation="vertical"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+                <TextView style="@style/Label.Caps" android:text="@string/lbl_weekly_goal" />
+                <TextView android:id="@+id/tvGoalValue" android:textColor="@color/ring_challenge"
+                    android:textStyle="bold" android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/sliderGoal"
+                    android:valueFrom="1" android:valueTo="7" android:stepSize="1" android:value="3"
+                    app:trackColorActive="@color/ring_challenge" app:thumbColor="@color/ring_challenge"
+                    android:layout_width="match_parent" android:layout_height="wrap_content" />
+            </LinearLayout>
 
-            <Button android:id="@+id/btnLogout" style="@style/Btn.Primary" android:text="Log Out"
+            <Button android:id="@+id/btnLogout" style="@style/Btn.Primary" android:text="@string/btn_logout"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginTop="24dp" />
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"

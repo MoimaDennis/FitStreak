@@ -9,8 +9,13 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
             android:orientation="vertical" android:padding="16dp" android:paddingBottom="80dp">
 
+            <TextView android:id="@+id/tvSyncStatus" android:visibility="gone"
+                android:textColor="@color/ring_streak" android:textStyle="bold"
+                android:gravity="center" android:padding="8dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+
             <FrameLayout android:layout_width="220dp" android:layout_height="220dp"
-                android:layout_gravity="center" android:layout_marginTop="24dp">
+                android:layout_gravity="center" android:layout_marginTop="16dp">
 
                 <com.google.android.material.progressindicator.CircularProgressIndicator
                     android:id="@+id/ringStreak" android:layout_width="220dp" android:layout_height="220dp"
@@ -32,18 +37,22 @@
                 <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:layout_gravity="center" android:orientation="vertical" android:gravity="center">
                     <TextView android:id="@+id/tvStreakNumber" style="@style/Headline.Big" android:text="0" />
-                    <TextView style="@style/Label.Caps" android:text="Day Streak" />
+                    <TextView style="@style/Label.Caps" android:text="@string/lbl_day_streak" />
                 </LinearLayout>
             </FrameLayout>
+
+            <TextView android:id="@+id/tvWeekly" android:textColor="@color/ring_challenge"
+                android:textStyle="bold" android:gravity="center" android:layout_marginTop="12dp"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
 
             <LinearLayout android:id="@+id/cardTodayWorkout" style="@style/Card.Rounded"
                 android:layout_marginTop="24dp" android:clickable="true" android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
                 android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                <TextView style="@style/Label.Caps" android:text="Today's Workout — Tap to Start" />
+                <TextView style="@style/Label.Caps" android:text="@string/lbl_today_workout" />
                 <TextView android:id="@+id/tvTodayWorkout" android:textColor="@color/text_primary"
                     android:textSize="20sp" android:textStyle="bold" android:layout_marginTop="8dp"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading..." />
+                    android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/msg_loading" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
