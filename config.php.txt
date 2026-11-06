@@ -1,0 +1,7 @@
+<?php
+const DB_HOST = 'localhost';
+const DB_NAME = 'fitstreak';
+const DB_USER = 'root';
+const DB_PASS = '';
+const JWT_SECRET = 'put-a-long-random-string-here';
+const FIREBASE_PROJECT_ID = 'your-firebase-project-id';

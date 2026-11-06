@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+# Secrets - never commit these
+*.jks
+*.keystore
+keystore.properties
+/fitstreak-api/config.php
