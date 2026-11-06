@@ -1,32 +1,28 @@
-# AI Tool Usage
+# AI Tool Usage (FitStreak – Part 3)
 
-AI assistance (Claude, by Anthropic) was used throughout the development of this Part 2
-prototype to help plan structure, generate boilerplate code, and debug build errors. AI was
-not used to design the app's core logic or feature set — those were defined in the Part 1
-planning document prior to any AI assistance.
+**Tool used:** Claude Sonnet 5.5, Anthropic's AI assistant, used through the Claude app.
 
-## Where AI was used
+**Reference:** Anthropic. 2026. *Claude Sonnet 5.5* [Large language model]. Available at: https://claude.ai [Accessed 5 November 2026].
 
-- **REST API structure**: Generated the initial PHP/Slim route handlers for authentication
-  (register/login with JWT), workout retrieval and filtering, the streak/XP/badge calculation
-  logic, and the daily challenge/leaderboard endpoints, based on the schema and business rules
-  defined in the Part 1 planning document.
-- **Android/Kotlin boilerplate**: Generated Retrofit interface definitions, data model classes,
-  RecyclerView adapters, and the Room database setup for offline workout caching.
-- **UI implementation**: Generated the dark theme (colors, styles) and the three-ring streak
-  visualization on the Home Dashboard, and the shared `BaseActivity` pattern used for consistent
-  bottom navigation across all screens.
-- **CI/CD configuration**: Generated the GitHub Actions workflow file for automated unit testing
-  and building the debug APK on every push.
-- **Debugging**: AI assisted in resolving several build environment issues, including
-  [describe ONE real issue you personally hit and fixed — e.g. "a KSP2/Room annotation processor
-  bug that caused a 'java.lang.IllegalStateException: unexpected jvm signature V' error, resolved
-  by upgrading the Room library version" — write this in your own words based on what actually
-  happened].
+## How AI was used
+
+| Area | How Claude helped | What I did myself |
+|---|---|---|
+| Planning | Turned the Part 3 brief and marking rubric into a step-by-step checklist. | Chose which features to build and reviewed every step against the rubric. |
+| Single sign-on | Suggested Google sign-in with Firebase Authentication and the Credential Manager library, and drafted the `LoginActivity` code and the PHP `/api/sso` endpoint. | Created the Firebase project, registered my SHA-1 keys, and tested sign-in on my own phone. |
+| Offline mode | Drafted the Room `pending_logs` table, `SyncManager` and the network callback that uploads queued workouts. | Tested by switching on flight mode, finishing a workout, and reconnecting. |
+| Push notifications | Drafted the Firebase Cloud Messaging service and the notification channel code. | Sent test messages from the Firebase console and checked Logcat. |
+| Multi-language | Translated the interface strings into Afrikaans and isiZulu. | Checked the translations on screen and corrected wording. |
+| Workout History and Weekly Goal | Drafted the screens, API endpoints and layouts. | Tested them and adjusted the design. |
+| Unit tests and CI | Drafted the unit tests and the GitHub Actions workflow. | Ran the tests, fixed failures, and checked that the Actions run was green. |
+| Debugging | I pasted Gradle and Logcat errors into Claude and used its explanations to fix them. | Applied and re-tested each fix. |
+| README and release notes | Helped structure the documents. | Rewrote them in my own words and added my own screenshots. |
+
+## Citation in the code
+Code that was AI-assisted is marked with comments such as `// PART 3` and is explained in comments and Logcat messages. I read and tested all AI-generated code before committing it.
 
 ## What was not AI-generated
+The app idea, the database design, the streak/XP rules and the screen flow come from my Part 1 research and planning document. The demo video, the screenshots, the Firebase and Play Store set-up, and all testing on a real phone were done by me.
 
-The app's feature set, database schema, gamification logic (streak/XP/level formulas, badge
-criteria), and overall screen flow were designed independently in the Part 1 planning and
-research document, before any AI tool was used. All AI-suggested code was reviewed, tested, and
-adapted by the student before inclusion in the final submission.
+## Limitations I noticed
+AI-generated code did not always compile first time and its translations needed checking. I treated everything it produced as a draft that I had to verify.
