@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitstreak.data.Workout
+import com.example.fitstreak.util.localizedTerm
 
 class WorkoutAdapter(
     private var items: List<Workout>,
@@ -25,7 +26,14 @@ class WorkoutAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val workout = items[position]
         holder.tvName.text = workout.name
-        holder.tvDetails.text = "${workout.duration_minutes} min • ${workout.intensity} • ${workout.body_part} • ${workout.equipment}"
+        val ctx = holder.itemView.context
+        holder.tvDetails.text = ctx.getString(
+            R.string.fmt_workout_details,
+            workout.duration_minutes,
+            ctx.localizedTerm(workout.intensity),
+            ctx.localizedTerm(workout.body_part),
+            ctx.localizedTerm(workout.equipment)
+        )
         holder.itemView.setOnClickListener { onClick(workout) }
     }
 
@@ -36,4 +44,3 @@ class WorkoutAdapter(
         notifyDataSetChanged()
     }
 }
-

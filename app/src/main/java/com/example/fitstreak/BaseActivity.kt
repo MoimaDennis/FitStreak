@@ -1,12 +1,34 @@
 package com.example.fitstreak
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+/** Shared by the 5 main screens: bottom navigation + the Android 13 notification permission. */
 abstract class BaseActivity : AppCompatActivity() {
 
     abstract fun selectedNavId(): Int
+
+    private val notificationPermission =
+        registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+            Log.d("BaseActivity", "POST_NOTIFICATIONS granted = $granted")
+        }
+
+    /** Android 13+ must ask the user before notifications can be shown. */
+    protected fun askNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+            ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            notificationPermission.launch(Manifest.permission.POST_NOTIFICATIONS)
+        }
+    }
 
     protected fun setupBottomNav(bottomNav: BottomNavigationView) {
         bottomNav.selectedItemId = selectedNavId()
@@ -31,4 +53,3 @@ abstract class BaseActivity : AppCompatActivity() {
         }
     }
 }
-
