@@ -6,7 +6,7 @@
 
 ## Demo video
 
-▶ **YouTube (unlisted): PASTE-YOUR-VIDEO-LINK-HERE**
+▶ **https://youtu.be/meWdz2f8K7g**
 
 ## Purpose
 
